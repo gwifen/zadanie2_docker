@@ -68,6 +68,10 @@ jobs:
           summary: true
 
       - 
+        name: Display sarif.output.json
+        run: cat sarif.output.json
+
+      - 
         name: Analyze CVE Results
         id: analyze_cves
         run: |
