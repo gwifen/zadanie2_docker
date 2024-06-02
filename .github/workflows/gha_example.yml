@@ -9,7 +9,7 @@ on:
 jobs:
   ci_step:
     name: Build, tag and push Docker image to DockerHub
-    runs-on: ubuntu-latest
+    runs-on: scratch
       
     steps:
       - 
@@ -48,7 +48,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64 #,linux/arm64
           push: true
           cache-from: |
             type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/example:cache 
