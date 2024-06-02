@@ -89,7 +89,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }} 
+          password: ${{ secrets.GH_TOKEN }} 
       
       -
         name: Define Metadata for GHCR
