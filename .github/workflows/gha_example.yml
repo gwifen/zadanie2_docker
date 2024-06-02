@@ -72,7 +72,7 @@ jobs:
         id: analyze_cves
         run: |
           critical_issues=$(jq '[.runs[].results[] | select(.level == "critical")] | length' sarif.output.json)
-          high_issues=$(jq '[.runs[].results[] | select(.level == "high")] | length' sarif.output.json)
+          high_issues=$(jq '[.runs[].results[] | select(.level == "medium")] | length' sarif.output.json)
           echo "Critical issues: $critical_issues"
           echo "High issues: $high_issues"
           if [ "$critical_issues" -ne 0 ] || [ "$high_issues" -ne 0 ]; then
