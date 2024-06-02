@@ -9,7 +9,7 @@ on:
 jobs:
   ci_step:
     name: Build, tag and push Docker image to DockerHub
-    runs-on: alpine
+    runs-on: self-hosted
       
     steps:
       - 
